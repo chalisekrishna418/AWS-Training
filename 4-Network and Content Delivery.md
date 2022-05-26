@@ -33,7 +33,7 @@
 
 - We will continue this training with IPv4 as it will serve our purpose. IP will refer to IPv4 from now on. But please please please also learn about IPv6 if you want to evolve in the future. Its very important.
 
-![640px-IPv4_address_structure_and_writing_systems-en.svg.png](:/3742186e1b3444fb8925ed4207a917a1)
+![IP BreakDown](images/IP.png)
 
 ### 3. Static IPs and DHCP
 
@@ -106,7 +106,7 @@
     c. TLD Nameserver
     d. Authoritative Nameserver
 
-![DNS query journey.png](:/15e38bf74d8b4b91871970048e776bb2)
+![How DNS Works?](images/how-DNS-works.png)
 
 ### 13. Content Delivery Network (CDN)
 
@@ -249,7 +249,7 @@
 
 ### DNS resolution through Route53
 - The major difference is that Route53 acts as your authoratice DNS nameserver.
-![Screen Shot 2022-05-18 at 08.51.31.png](:/fa9b94975e8c4d0bb3569a47c6580e2d)
+![How Route53 Works?](images/how-Route53-works.png)
 
 
 ## Lab Task VPC:

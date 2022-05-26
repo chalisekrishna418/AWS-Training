@@ -1,7 +1,7 @@
 # Security Identity and Compliance
 
 ## Shared Responsibility Model
-![Screen Shot 2022-05-06 at 00.33.10.png](:/e495aae3bda74f2b9c2d0fdfaa175cbe)
+![AWS Shared Responsibility Model](images/shared-responsibility-model.png)
 
 ## Identity and Management (IAM)
 [![youtube-Identity and Management](https://miro.medium.com/max/1400/1*AdbjQfSfAKxg1r_hJxL5wg.png)](https://www.youtube.com/watch?v=Ul6FW4UANGc)

@@ -6,7 +6,7 @@ The percentage of time for which a system is made available is reffered as the a
 - Daily Availability, Weekly, Monthly or Yearly Avaibility is not the same thing even if the number is same.
 - Best way to build higly available system is by using Muti-AZ Setup.
 
-![Screen Shot 2022-05-05 at 23.46.07.png](:/3f7a8a15583a43f7ae5a6222fea23731)
+![Availability](images/availability.png)
 
 ## Reliability
 Reliability is the likelihood that a system will remain operational (despite of failures) i,e ability to tolerate failure.
