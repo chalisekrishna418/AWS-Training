@@ -33,7 +33,7 @@
 
 - We will continue this training with IPv4 as it will serve our purpose. IP will refer to IPv4 from now on. But please please please also learn about IPv6 if you want to evolve in the future. Its very important.
 
-![IP BreakDown](images/IP.png)
+![640px-IPv4_address_structure_and_writing_systems-en.svg.png](:/3742186e1b3444fb8925ed4207a917a1)
 
 ### 3. Static IPs and DHCP
 
@@ -106,7 +106,7 @@
     c. TLD Nameserver
     d. Authoritative Nameserver
 
-![How DNS Works?](images/how-DNS-works.png)
+![DNS query journey.png](:/15e38bf74d8b4b91871970048e776bb2)
 
 ### 13. Content Delivery Network (CDN)
 
@@ -200,7 +200,12 @@
 - Cloudfront can also speed up dynamic content.
 
 ## API Gateway
-- Later !
+- API Gateway is a fully managed service that enables developers to create, publish, maintain, monitor, and secure APIs at any scale.
+- An API gateway acts as a reverse proxy to accept all application programming interface (API) calls.
+- Support for stateful (WebSocket) and stateless (HTTP and REST) APIs.
+- You can use IAM, Lambda Authorizer functions and congnito user pools as authentication mechanisms.
+- supports custom domain names like `example.com`
+- You can use canary deployments for safe rollout.
 
 ## Route53
 - Route53 is a DNS service from AWS that is highly available (100% availability in SLA).
@@ -249,10 +254,11 @@
 
 ### DNS resolution through Route53
 - The major difference is that Route53 acts as your authoratice DNS nameserver.
-![How Route53 Works?](images/how-Route53-works.png)
+![Screen Shot 2022-05-18 at 08.51.31.png](:/fa9b94975e8c4d0bb3569a47c6580e2d)
 
 
 ## Lab Task VPC:
+### Launch Resources in your own VPC
 1. Create a Custom VPC with CIDR block 10.20.0.0/16 and name it `aws-training-vpc`
 2. Which of these resources are created as part of the default VPC?
 	1. VPC
@@ -318,7 +324,7 @@ telnet <private IP of public-instance2> 22
 20. Create a route in `public-AZ1` of first VPC to route `10.30.0.0/16` to peering connection.
 21. Create a route in `public-AZ1` of second VPC to route `10.20.0.0/16` to peering connection.
 
-### Cleanup list:
+**Deletion list:**
 1. Delete three EC2 Instances (private and public instances)
 2. Delete 3 Security Groups
 3. Delete Peering Connection.
@@ -328,6 +334,19 @@ telnet <private IP of public-instance2> 22
 7. Delete Subnets
 8. Delete VPC
 9. Delete 2 Elastic IPs
+
+### Build a sample API gateway
+1. Create lambda function `aws-training-lambda` that gives JSON response. Like:
+ `{"msg": "Hello from AWS Training"}`
+Runtime: python-3.x
+Code URL: https://gist.github.com/chalisekrishna418/5bdc78fba3e9f36e27c72212fee12edf
+ 2. Deploy and Test the lambda to see if it is functioning properly.
+ 3. Create a API Gateway named `aws-training-lambda-API` with lambda integration and `GET` resource that returns the result of resource on `/` path.
+ 4. Try entering the URL of API gateway in browser and see the result.
+
+**Deletion List**
+- Lambda: `aws-training-lambda`
+- API Gateway: `aws-training-lambda-API`
 
 ## Useful Resources
 
@@ -339,3 +358,4 @@ telnet <private IP of public-instance2> 22
 - [AWSDocs - VPC Routing](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)
 - [AWSDocs - NAT Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)
 - [Comaprision of NACL and SG](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Security.html#VPC_Security_Comparison)
+- 

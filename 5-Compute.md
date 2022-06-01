@@ -221,6 +221,27 @@ systemctl stop apache2.service
 - Delete NAT Gateway. Delete Routes if required !
 - Delete `private-route-table`
 
+### Start and Stop resources using Lambda
+- Create a EC2 instance `development-web-server`.
+- Create a IAM role that Lambda can use and has full access to EC2. name it as `test-lambda-role` 
+- Create a Lambda function with name `stop-ec2-lambda` with following details:
+	- Runtime: Python-3.x
+	- Memory: 256 MiB
+	- Timeout: 30 seconds
+	- IAM Role: `test-lambda-role`
+	- Code Link: https://gist.github.com/chalisekrishna418/32f3c5858b3976793d7b8cd67b90cdf4
+- Create a Lambda function with name `start-ec2-lambda` with following details:
+	- Runtime: Python-3.x
+	- Memory: 256 MiB
+	- Timeout: 30 seconds
+	- IAM Role: `test-lambda-role`
+	- Code Link: https://gist.github.com/chalisekrishna418/32f3c5858b3976793d7b8cd67b90cdf4
+
+**Deletion List**
+- Terminate EC2 instance `development-web-server`.
+- Delete Lambda Role: `test-lambda-role`
+- Delete Lambda Function `stop-ec2-lambda` and `start-ec2-lambda`
+
 ## Reading List
 - [AWSDocs: EBS Volume Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html)
 - [AWSDocs - Placement Groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html)
