@@ -215,7 +215,6 @@ There is no need to generate a key and Certificate Signing Reques (CSR). After c
 - [AWSDocs - ACM Certifiacte Characteristics](https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate.html)
 - [AWSPricing - KMS](https://aws.amazon.com/kms/pricing/)
 
-
 ## Lab Tasks
 ### IAM
 1. Create a group named as `DevOps`
@@ -253,7 +252,6 @@ Cleanup
 - Revert Password Policy to as it was earlier.
 
 If you Completed the following Tasks, then give a virtual Hi-five !
-
 
 ### ACM and KMS
 We will do the labs for ACM and KMS on other chapters as it needs to interact with other services like Elastic Loadbalancer, Cloudfront, RDS, Dynamodb, S3, Kinesis Streams etc.

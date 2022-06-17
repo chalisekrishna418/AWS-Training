@@ -57,7 +57,51 @@
 	- You need to cache objects.
 
 ## Lab
-### Leveraging Elasticache redis and RDS as a cache and database host for application hosted in EC2 instance.
+### Creating a RDS Instance
+
+1. Create a DB Subnet Group `AWS-training` in Public Subnets. Use any two public subnets
+	a. name: `AWS-training`
+	b. Description: `Public DB Subnet Group`
+3. Create a RDS instance with Following details:
+	a. Db-Engine: MySQL
+	b. Engine Version: 8.x
+	c. Instance Type: db.t3.micro
+	d. Security: allow default mysql port only to your machine.
+	e. Make it accessible from your home network.
+	f. Enable Encryption
+	g. Enable muti AZ support
+	h. In `AWS-training` Subnet Group
+	i. MasterUser: root
+	j: MasterPassword: `choose yourself`
+	k. Initial Database: `training_db`
+	l. Storage: 20GiB or minimum value
+	m. Instance Identifier: `test-training-mysql1`
+3. Connect to the RDS instance  `test-training-mysql1` and list databases in that DB Instance.
+
+**Deletion List:**
+-  DB Subnet Group: `AWS-training`
+-  RDS Instance: `test-training-mysql1`
+
+### Creating a Elasticache Redis
+1. Create a Cache Subnet Group Named `AWS-training` in Public Subnets. Use any two public subnets.
+2. Create a Elasticache Cluster:
+	a. Name: `test-training-redis1`
+	b. Engine: `Redis`
+	c. Engine Version: `6.2`
+	d. Cluster mode: disabled
+	e. Enable Muti AZ
+	f. Node Type: `cache.t3.micro`
+	g. Subnet Group: `AWS-training`
+	h. Zone Placement: No preference
+	i. Enable Encryption at rest and transit
+	j. Enable Backups with retention policy of 3 days
+	h. Leave other things as is.
+	i. Security: allow default Redis port only to your machine.
+3. login into the Redis from your computer 
+
+**Deletion List**
+- Cache Subnet Group:  `AWS-training` 
+- Elasticache Cluster: `test-training-redis1`
 
 ## Reading Materials
 - [AWSDocs - What is AWS RDS?](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)

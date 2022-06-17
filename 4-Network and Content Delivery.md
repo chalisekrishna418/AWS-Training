@@ -256,7 +256,6 @@
 - The major difference is that Route53 acts as your authoratice DNS nameserver.
 ![Screen Shot 2022-05-18 at 08.51.31.png](:/fa9b94975e8c4d0bb3569a47c6580e2d)
 
-
 ## Lab Task VPC:
 ### Launch Resources in your own VPC
 1. Create a Custom VPC with CIDR block 10.20.0.0/16 and name it `aws-training-vpc`
@@ -340,9 +339,9 @@ telnet <private IP of public-instance2> 22
  `{"msg": "Hello from AWS Training"}`
 Runtime: python-3.x
 Code URL: https://gist.github.com/chalisekrishna418/5bdc78fba3e9f36e27c72212fee12edf
- 2. Deploy and Test the lambda to see if it is functioning properly.
- 3. Create a API Gateway named `aws-training-lambda-API` with lambda integration and `GET` resource that returns the result of resource on `/` path.
- 4. Try entering the URL of API gateway in browser and see the result.
+2. Deploy and Test the lambda to see if it is functioning properly.
+3. Create a API Gateway named `aws-training-lambda-API` with lambda integration and `GET` resource that returns the result of resource on `/` path.
+4. Try entering the URL of API gateway in browser and see the result.
 
 **Deletion List**
 - Lambda: `aws-training-lambda`
@@ -358,4 +357,3 @@ Code URL: https://gist.github.com/chalisekrishna418/5bdc78fba3e9f36e27c72212fee1
 - [AWSDocs - VPC Routing](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)
 - [AWSDocs - NAT Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)
 - [Comaprision of NACL and SG](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Security.html#VPC_Security_Comparison)
-- 
